@@ -2,6 +2,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@interfaces/*":["src/app/Common/interfaces/*"],
+      "@services/*":["src/app/Services/*"],
+      "@env/*": ["src/environments/*"]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
