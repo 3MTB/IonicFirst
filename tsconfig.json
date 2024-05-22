@@ -3,6 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
+      "@pages/*":["src/app/pages/*"],
       "@interfaces/*":["src/app/Common/interfaces/*"],
       "@services/*":["src/app/Services/*"],
       "@env/*": ["src/environments/*"]

@@ -1,4 +1,5 @@
-import{ Origin } from "@interfaces/Character"
+import{ Origin } from "@interfaces/Character";
+
 export interface Info {
   count: number;
   pages: number;
