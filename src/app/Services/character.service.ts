@@ -30,9 +30,9 @@ export class CharacterService {
     if (dataToFilter.type) {
       filterToUse += `type=${dataToFilter.type}&`;
     }
-    if (dataToFilter.location !== null) {
+   /*  if (dataToFilter.location !== null) {
       filterToUse += `location=${dataToFilter.location}&`;
-    }
+    } */
 
     //! Si no hay filtros me devuelve todos
     if (filterToUse == '') {

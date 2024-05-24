@@ -29,3 +29,9 @@ export interface Location {
   name: string
   url: string
 }
+export interface ObjValuesToSearch {
+  status: string[],
+  species: string[],
+  type: string[],
+  gender: string[],
+}

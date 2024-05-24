@@ -4,10 +4,32 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<!-- <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">test</ion-title>
     </ion-toolbar>
   </ion-header>
+</ion-content> -->
+
+<!-- <ion-content>
+  <form [formGroup]="loginForm" (ngSubmit)="SubmitForm()">
+    <ion-input
+      type="text"
+      label="User"
+      formControlName="user"
+    ></ion-input>
+    @if(loginForm.controls['user'].status==='INVALID'){
+      <ion-label color="danger"> WITHOUT VALIDATED ::: USER</ion-label>
+    }
+    <ion-input type="text" label="Passowrd" formControlName="password">
+    </ion-input>
+    <ion-input type="number" label="Age" formControlName="age"></ion-input>
+    <button type="submit">Log In</button>
+  </form>
+  {{loginForm}}
 </ion-content>
+ -->
+
+
+ 
