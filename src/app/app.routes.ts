@@ -10,15 +10,29 @@ export const routes: Routes = [
     path: '',
     //redirectTo: 'test',
     redirectTo: 'characters',
+    // redirectTo: 'characters',
     pathMatch: 'full'
   },
   {
     path: 'characters',
-    loadComponent: () => import('./pages/characters/characters.page').then(m => m.CharactersPage)
+    children: [
+      {
+        path: '',
+        loadComponent: () => import('./pages/characters/characters.page').then(m => m.CharactersPage)
+      },
+      {
+        path: ':id',
+        loadComponent: () => import('./pages/detail-character/detail-character.page').then(m => m.DetailCharacterPage)
+      }
+    ]
   },
   {
     path: 'test',
     loadComponent: () => import('./pages/test/test.page').then(m => m.TestPage)
+  },
+  {
+    path: 'detail-character',
+    loadComponent: () => import('./pages/detail-character/detail-character.page').then(m => m.DetailCharacterPage)
   },
 
 ];

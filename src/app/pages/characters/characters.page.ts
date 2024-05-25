@@ -54,6 +54,7 @@ export class CharactersPage implements OnInit {
     type: [],
     gender: [],
   }
+  isFilter = false;
 
   //?                                  TEST
   test: string[] = [];
@@ -124,6 +125,8 @@ export class CharactersPage implements OnInit {
     if (this.isConnected) {
       this.IsChargingMore = true;
       let urlBusqueda = this.characterService.makeUrlToFilter(this.filterSearch);
+      console.log('Obj Search: ', this.filterSearch);
+      console.log('ATACANDO: ', urlBusqueda);
       this.characterService.getPageCharacter(urlBusqueda).pipe(
         catchError((err: HttpErrorResponse) => {
           console.error('Error', err);
@@ -134,8 +137,9 @@ export class CharactersPage implements OnInit {
         this.AllCharacter = x.results;
         this.IsChargingMore = false;
       });
-      console.log('Url Creada ', urlBusqueda);
     }
   }
+
+
 
 }

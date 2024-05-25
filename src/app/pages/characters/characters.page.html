@@ -10,16 +10,27 @@
 } {{filterSearch | json}}
 <ion-content class="ion-padding">
   <ion-toolbar>
-    <form class="ion-margin" (ngSubmit)="Search()">
-      <!--?                     NOMBR                      -->
-      <ion-searchbar
-        [(ngModel)]="filterSearch.name"
-        [ngModelOptions]="{standalone:true}"
-        placeholder="Search By Name"
-      >
-      </ion-searchbar>
+    <!--?                     NOMBRE                      -->
+    <ion-searchbar
+      (ngModelChange)="Search()"
+      [(ngModel)]="filterSearch.name"
+      [ngModelOptions]="{standalone:true}"
+      placeholder="Search By Name"
+    >
+    </ion-searchbar>
+
+    <ion-button
+      (click)="isFilter=!isFilter"
+      fill="clear"
+      [color]="isFilter ? 'warning':'success'"
+    >
+      {{isFilter ? 'Hide' : 'Show'}} Filter
+    </ion-button>
+    @if(isFilter){
+    <form class="ion-margin">
       <!--?                     STATUS                      -->
       <ion-select
+        (ionChange)="Search()"
         [(ngModel)]="filterSearch.status"
         [ngModelOptions]="{standalone:true}"
         placeholder="Status"
@@ -33,6 +44,7 @@
       </ion-select>
       <!--?                     SPECIES                      -->
       <ion-select
+        (ionChange)="Search()"
         [(ngModel)]="filterSearch.species"
         [ngModelOptions]="{standalone:true}"
         placeholder="Species"
@@ -46,6 +58,7 @@
       </ion-select>
       <!--?                     GENDER                      -->
       <ion-select
+        (ionChange)="Search()"
         [(ngModel)]="filterSearch.gender"
         [ngModelOptions]="{standalone:true}"
         placeholder="Gender"
@@ -59,6 +72,7 @@
       </ion-select>
       <!--?                     TYPE                      -->
       <ion-select
+        (ionChange)="Search()"
         [(ngModel)]="filterSearch.type"
         [ngModelOptions]="{standalone:true}"
         placeholder="Type"
@@ -72,11 +86,12 @@
       </ion-select>
 
       <!--?                     BUTTON                      -->
-      <ion-button type="submit" fill="clear" color="success">
+      <ion-button type="submit" fill="clear" color="success" (click)="Search()">
         Filter
       </ion-button>
       <!--?               F I N I S H       F I L T E R                      -->
     </form>
+    }
   </ion-toolbar>
 
   <ion-list [inset]="true" class="container">

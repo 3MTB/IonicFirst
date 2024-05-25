@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button fill="clear" [routerLink]="['/']">
+     Back
+    </ion-button>
+    <ion-title> Details of {{character.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+@if(error){
+<ion-label color="danger"> ERROR : {{error}}</ion-label>
+} @else{
+
+<ion-content>
+  <ion-card class="ion-align-self-center">
+    <img
+      [alt]="character.name"
+      class="ImgCharacter ion-padding"
+      [src]="character.image"
+    />
+    <ion-card-header>
+      <ion-card-title>Name: {{character.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label>
+        Status:
+        <ion-label [color]="colorStatus">{{character.status}}</ion-label>
+      </ion-label>
+
+      <br />
+      <ion-label> Specie: {{character.status}} </ion-label>
+
+      <br />
+      <ion-label>
+        Type: {{character.type === '' ? 'Empty' : character.type}}
+      </ion-label>
+
+      <br />
+      <ion-label>
+        Gender:
+        <ion-label [color]="colorGender"> {{character.gender}}</ion-label>
+      </ion-label>
+
+      <br />
+      <ion-label>
+        Planet Origin:
+        <ion-label color="success"> {{character.origin.name}}</ion-label>
+      </ion-label>
+
+      <br />
+      <ion-label>
+        Ultimate Location
+        <ion-label color="success"> {{character.location.name}}</ion-label>
+      </ion-label>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+}
