@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { MainPage } from './pages/main/main.page';
 
 export const routes: Routes = [
   {
@@ -25,10 +26,6 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/detail-character/detail-character.page').then(m => m.DetailCharacterPage)
       }
     ]
-  },
-  {
-    path: 'test',
-    loadComponent: () => import('./pages/test/test.page').then(m => m.TestPage)
   },
   {
     path: 'detail-character',

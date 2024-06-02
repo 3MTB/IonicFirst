@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonSelect, IonSelectOption, IonMenuButton, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonButtons, IonInfiniteScroll, IonInfiniteScrollContent, IonNote, IonSkeletonText, IonSearchbar, IonGrid, IonRow, IonCol, IonButton } from '@ionic/angular/standalone';
+import { IonContent, IonSelect, IonSelectOption, IonMenuButton, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonButtons, IonInfiniteScroll, IonInfiniteScrollContent, IonNote, IonSkeletonText, IonSearchbar, IonGrid, IonRow, IonCol, IonButton, IonLabel, IonText } from '@ionic/angular/standalone';
 import { Character, ObjValuesToSearch } from '@interfaces/Character';
 import { FilterCharacter, Info } from '@interfaces/shared';
 import { EMPTY, catchError, delay, map } from 'rxjs';
@@ -18,7 +18,7 @@ import { StaticDataService } from '@services/static-data.service';
   templateUrl: './characters.page.html',
   styleUrls: ['./characters.page.scss'],
   standalone: true,
-  imports: [IonButton, IonCol, IonRow, IonGrid, IonSearchbar,
+  imports: [IonText, IonLabel, IonButton, IonCol, IonRow, IonGrid, IonSearchbar,
     IonSkeletonText, IonNote,
     IonInfiniteScrollContent,
     IonInfiniteScroll, IonButtons, IonMenuButton,
@@ -125,10 +125,9 @@ export class CharactersPage implements OnInit {
     if (this.isConnected) {
       this.IsChargingMore = true;
       let urlBusqueda = this.characterService.makeUrlToFilter(this.filterSearch);
-      console.log('Obj Search: ', this.filterSearch);
-      console.log('ATACANDO: ', urlBusqueda);
+
       this.characterService.getPageCharacter(urlBusqueda).pipe(
-        catchError((err: HttpErrorResponse) => {
+        catchError((err: string) => {
           console.error('Error', err);
           return EMPTY;
         }),
