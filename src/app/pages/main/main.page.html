@@ -1,4 +1,39 @@
+<ion-header class="ion-no-border">
+  <ion-title>
+    <ion-button (click)="getAllKeys()">See Keys</ion-button>
+  </ion-title>
+</ion-header>
+<ion-content  class="ion-padding">
+  @for (dt of AllDataStorafe; track $index) { @if($first){
+  <ion-row>
+    <ion-col size="2">INDEX</ion-col>
+    <ion-col size="3">KEY</ion-col>
+    <ion-col size="4">Value</ion-col>
+  </ion-row>
+  }
+  <ion-row>
+    <ion-col size="2">{{dt.index}}</ion-col>
+    <ion-col size="3">{{dt.key}}</ion-col>
+    <ion-col size="4">{{dt.value}}</ion-col>
+  </ion-row>
+  }
 
+  <ion-card button [routerLink]="['/characters']">
+    <ion-card-header>
+      <ion-img src="./../../../assets/Imgs/characterPosterImg.png"> </ion-img>
+      <ion-title color="warning">Characters</ion-title>
+      <ion-card-subtitle>Information About Characters</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+  <ion-card button="">
+    <ion-card-header>
+      <ion-img src="./../../../assets/Imgs/gameKnowledgeImg.png"> </ion-img>
+      <ion-title color="warning">GAME ::: COMING SOON</ion-title>
+      <ion-card-subtitle
+        >Test Your knowledge about Ricky And Morty</ion-card-subtitle
+      >
+    </ion-card-header>
+  </ion-card>
 
-
-<app-characters></app-characters>
+  <!--  <app-characters></app-characters> -->
+</ion-content>

@@ -1,6 +1,9 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-back-button slot="start" [routerLink]="['/']"> </ion-back-button>
+    <ion-button fill="clear" slot="start" [routerLink]="['/characters']">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+      Back
+    </ion-button>
     <ion-title> Details of {{character.name}}</ion-title>
   </ion-toolbar>
 </ion-header>

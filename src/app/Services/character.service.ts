@@ -1,7 +1,7 @@
 import { ApiResultCharacter, Character } from '@interfaces/Character';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment as env, environment } from '@env/environment.prod';
+import { environment as env, } from '@env/environment.prod';
 import { FilterCharacter } from '@interfaces/shared';
 @Injectable({
   providedIn: 'root'
@@ -43,13 +43,13 @@ export class CharacterService {
     console.log('               URL GENERADA: ', filterToUse);
     //! Si no hay filtros me devuelve todos
     if (filterToUse == '') {
-      return `${environment.urlBase}/character`;
+      return `${env.urlBase}/character`;
     }
     //! Si hay filtros me devuelve todos los registros que cumplan dicho filtro
     else {
       filterToUse = filterToUse.substring(0, filterToUse.length - 1);
-      console.log('FILTER GENERATED', `${environment.urlBase}/character/?${filterToUse}`);
-      return `${environment.urlBase}/character/?${filterToUse}`;
+      console.log('FILTER GENERATED', `${env.urlBase}/character/?${filterToUse}`);
+      return `${env.urlBase}/character/?${filterToUse}`;
     }
   }
 }

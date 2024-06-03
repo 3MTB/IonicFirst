@@ -3,11 +3,13 @@
     <ion-title>Characters</ion-title>
     <ion-note>{{AllCharacter.length}}</ion-note>
   </ion-toolbar>
+  <ion-toolbar>
+    @if(!isConnected){
+    <ion-title color="danger"> SIN CONEXION </ion-title>
+    } {{filterSearch | json}}
+  </ion-toolbar>
 </ion-header>
 
-@if(!isConnected){
-<ion-title color="danger"> SIN CONEXION </ion-title>
-} {{filterSearch | json}}
 <ion-content class="ion-padding">
   <ion-toolbar>
     <!--?                     NOMBRE                      -->

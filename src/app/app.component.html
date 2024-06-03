@@ -1,3 +1,24 @@
 <ion-app>
+  <ion-item>
+    <ion-toggle
+      [(ngModel)]="isDark"
+      (ionChange)="changeTheme()"
+      justify="center"
+      labelPlacement="start"
+    >
+    <label class="ion-hide"> . </label>
+
+      @if (isDark) {
+        <ion-icon color="danger" name="sunny-outline"></ion-icon>
+      } @else {
+        <ion-icon name="moon-outline"></ion-icon>
+      }
+    </ion-toggle>
+  </ion-item>
+  <!--   <ion-header class="ion-no-header">
+    <ion-toolbar>
+
+    </ion-toolbar>
+  </ion-header> -->
   <ion-router-outlet></ion-router-outlet>
 </ion-app>

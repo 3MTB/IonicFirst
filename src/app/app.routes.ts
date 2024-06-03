@@ -10,7 +10,7 @@ export const routes: Routes = [
   {
     path: '',
     //redirectTo: 'test',
-    redirectTo: 'characters',
+    redirectTo: 'home',
     // redirectTo: 'characters',
     pathMatch: 'full'
   },
@@ -30,6 +30,10 @@ export const routes: Routes = [
   {
     path: 'detail-character',
     loadComponent: () => import('./pages/detail-character/detail-character.page').then(m => m.DetailCharacterPage)
+  },
+  {
+    path: 'home',
+    loadComponent: () => import('./pages/main/main.page').then(x => x.MainPage)
   },
 
 ];
