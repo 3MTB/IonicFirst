@@ -3,15 +3,16 @@ import { delay } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Network } from '@capacitor/network';
-import { IonApp, IonRouterOutlet, IonHeader, IonToolbar, IonAlert, IonItem, IonToggle, IonIcon } from '@ionic/angular/standalone';
+import { IonApp, IonRouterOutlet, IonHeader, IonToolbar, IonAlert, IonItem, IonToggle, IonIcon, IonMenu, IonTitle, IonContent, IonButtons, IonMenuButton, IonButton, IonList } from '@ionic/angular/standalone';
 import { StorageServiceService } from '@services/storage-service.service';
 import { AlertController } from '@ionic/angular';
+import { MenuPrincipalPage } from '@pages/menu-principal/menu-principal.page';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   standalone: true,
-  imports: [IonIcon, FormsModule, IonToggle, IonItem, IonAlert, AsyncPipe, IonToolbar, IonHeader, IonApp, IonRouterOutlet],
+  imports: [MenuPrincipalPage, IonList, IonButton, IonButtons,IonMenuButton, IonContent, IonTitle, IonIcon,IonMenu, FormsModule, IonToggle, IonItem, IonAlert, AsyncPipe, IonToolbar, IonHeader, IonApp, IonRouterOutlet],
 })
 export class AppComponent implements OnInit {
   isDark = true;
@@ -36,9 +37,7 @@ export class AppComponent implements OnInit {
       this.changeTheme();
     });
   }
-  updateScreen() {
 
-  }
   async generaAlertNetwork() {
     const alert = await this.alertController.create({
       header: 'Without Connection',

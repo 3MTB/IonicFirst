@@ -1,13 +1,8 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-button fill="clear" slot="start" [routerLink]="['/characters']">
-      <ion-icon name="chevron-back-outline"></ion-icon>
-      Back
-    </ion-button>
-    <ion-title> Details of {{character.name}}</ion-title>
-  </ion-toolbar>
-</ion-header>
 
+<ion-button fill="clear" slot="start" [routerLink]="['/characters']">
+  <ion-icon name="chevron-back-outline"></ion-icon>
+  Back
+</ion-button>
 @if(error){
 <ion-label color="danger"> ERROR : {{error}}</ion-label>
 } @else{

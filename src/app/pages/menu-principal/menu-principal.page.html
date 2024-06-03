@@ -1,0 +1,35 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>MenuPrincipal</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<!-- <ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">MenuPrincipal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content> -->
+
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title slot="start">RC. Guide</ion-title>
+      <ion-button fill="clear" slot="end" (click)="btnThemePush()">
+        @if (isDark) {
+        <ion-icon color="danger" name="sunny-outline"></ion-icon>
+        } @else {
+        <ion-icon name="moon-outline"></ion-icon>
+        }
+      </ion-button>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item button  [routerLink]="['/home']">Home</ion-item>
+      <ion-item button  [routerLink]="['/characters']">Characters</ion-item>
+      <ion-item button>Games</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>

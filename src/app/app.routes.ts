@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { MainPage } from './pages/main/main.page';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
   {
@@ -11,6 +12,7 @@ export const routes: Routes = [
     path: '',
     //redirectTo: 'test',
     redirectTo: 'home',
+
     // redirectTo: 'characters',
     pathMatch: 'full'
   },
@@ -35,5 +37,6 @@ export const routes: Routes = [
     path: 'home',
     loadComponent: () => import('./pages/main/main.page').then(x => x.MainPage)
   },
+  
 
 ];

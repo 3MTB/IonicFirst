@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar class="ion-padding">
     <ion-title>Characters</ion-title>
     <ion-note>{{AllCharacter.length}}</ion-note>
@@ -8,9 +8,12 @@
     <ion-title color="danger"> SIN CONEXION </ion-title>
     } {{filterSearch | json}}
   </ion-toolbar>
-</ion-header>
-
+</ion-header> -->
+<ion-menu-button slot="end"></ion-menu-button>
 <ion-content class="ion-padding">
+  @if(!isConnected){
+  <ion-title color="danger"> SIN CONEXION </ion-title>
+  } {{filterSearch | json}}
   <ion-toolbar>
     <!--?                     NOMBRE                      -->
     <ion-searchbar
