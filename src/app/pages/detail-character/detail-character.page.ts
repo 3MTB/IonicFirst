@@ -7,13 +7,14 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CharacterService } from '@services/character.service';
 import { EMPTY, catchError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-detail-character',
   templateUrl: './detail-character.page.html',
   styleUrls: ['./detail-character.page.scss'],
   standalone: true,
-  imports: [IonIcon, IonButton, RouterLink, IonLabel, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonCard, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonIcon,TranslateModule, IonButton, RouterLink, IonLabel, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonCard, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class DetailCharacterPage implements OnInit {
 
@@ -46,6 +47,7 @@ export class DetailCharacterPage implements OnInit {
 
   }
   ngOnInit() {
+    //! Variable que diga que se esta cargando
     let valueReceived = this.route.snapshot.params['id'];
     if (isNaN(valueReceived) || !parseInt(valueReceived)) {
       console.error('El id proporcionado no es un numero');
@@ -59,6 +61,7 @@ export class DetailCharacterPage implements OnInit {
       })
     ).subscribe(character => {
       this.character = character;
+      //! la variable dice que se termino de cargar
     });
 
     if (this.error) {

@@ -8,14 +8,16 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/main/main.page').then(m => m.MainPage),
     title: 'Main'
   },
-  {
+  //! Remove it
+  /* {
     path: '',
     //redirectTo: 'test',
-    redirectTo: 'home',
-
+    redirectTo: 'splash',
     // redirectTo: 'characters',
     pathMatch: 'full'
-  },
+  }, */
+  //! Remove it
+
   {
     path: 'characters',
     children: [
@@ -37,6 +39,10 @@ export const routes: Routes = [
     path: 'home',
     loadComponent: () => import('./pages/main/main.page').then(x => x.MainPage)
   },
-  
+  {
+    path: 'splash',
+    loadComponent: () => import('./core/splash/splash.page').then(m => m.SplashPage)
+  },
+
 
 ];

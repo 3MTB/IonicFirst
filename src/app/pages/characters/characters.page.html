@@ -12,7 +12,9 @@
 <ion-menu-button slot="end"></ion-menu-button>
 <ion-content class="ion-padding">
   @if(!isConnected){
-  <ion-title color="danger"> SIN CONEXION </ion-title>
+  <ion-title color="danger">
+    {{"Shared.WithoutConnection" | translate}}
+  </ion-title>
   } {{filterSearch | json}}
   <ion-toolbar>
     <!--?                     NOMBRE                      -->
@@ -29,7 +31,8 @@
       fill="clear"
       [color]="isFilter ? 'warning':'success'"
     >
-      {{isFilter ? 'Hide' : 'Show'}} Filter
+      <!-- !          alta posibilidad de no funcionar -->
+      {{isFilter ? 'Hide Filters' : 'Show Filters'}}
     </ion-button>
     @if(isFilter){
     <form class="ion-margin">
@@ -38,11 +41,13 @@
         (ionChange)="Search()"
         [(ngModel)]="filterSearch.status"
         [ngModelOptions]="{standalone:true}"
-        placeholder="Status"
-        label="Status"
+        placeholder='{{"CharactersPage.AboutCharacters.Status" | translate}}'
+        label='{{"CharactersPage.AboutCharacters.Status" | translate}}'
       >
         @for(status of objValuesToSearch.status;track $index ){ @if($first){
-        <ion-select-option value="">Any</ion-select-option>
+        <ion-select-option value=""
+          >{{"Shared.All"|translate}}</ion-select-option
+        >
         }
         <ion-select-option [value]="status">{{status}}</ion-select-option>
         }
@@ -52,11 +57,13 @@
         (ionChange)="Search()"
         [(ngModel)]="filterSearch.species"
         [ngModelOptions]="{standalone:true}"
-        placeholder="Species"
-        label="Specie"
+        placeholder='{{"CharactersPage.AboutCharacters.Specie" | translate}}'
+        label='{{"CharactersPage.AboutCharacters.Specie" | translate}}'
       >
         @for(specie of objValuesToSearch.species;track $index ){ @if($first){
-        <ion-select-option value="">Any</ion-select-option>
+        <ion-select-option value=""
+          >{{"Shared.All"|translate}}</ion-select-option
+        >
         }
         <ion-select-option [value]="specie">{{specie}}</ion-select-option>
         }
@@ -66,11 +73,13 @@
         (ionChange)="Search()"
         [(ngModel)]="filterSearch.gender"
         [ngModelOptions]="{standalone:true}"
-        placeholder="Gender"
-        label="Gender"
+        placeholder='{{"CharactersPage.AboutCharacters.Gender" | translate}}'
+        label='{{"CharactersPage.AboutCharacters.Gender" | translate}}'
       >
         @for(gender of objValuesToSearch.gender;track $index ){ @if($first){
-        <ion-select-option value="">Any</ion-select-option>
+        <ion-select-option value=""
+          >{{"Shared.All"|translate}}</ion-select-option
+        >
         }
         <ion-select-option [value]="gender">{{gender}}</ion-select-option>
         }
@@ -80,20 +89,22 @@
         (ionChange)="Search()"
         [(ngModel)]="filterSearch.type"
         [ngModelOptions]="{standalone:true}"
-        placeholder="Type"
-        label="Type"
+        placeholder='{{"CharactersPage.AboutCharacters.Type" | translate}}'
+        label='{{"CharactersPage.AboutCharacters.Type" | translate}}'
       >
         @for(type of objValuesToSearch.type;track $index ){ @if($first){
-        <ion-select-option value="">Any</ion-select-option>
+        <ion-select-option value=""
+          >{{"Shared.All"|translate}}</ion-select-option
+        >
         }
         <ion-select-option [value]="type">{{type}}</ion-select-option>
         }
       </ion-select>
 
       <!--?                     BUTTON                      -->
-      <ion-button type="submit" fill="clear" color="success" (click)="Search()">
+      <!-- <ion-button type="submit" fill="clear" color="success" (click)="Search()">
         Filter
-      </ion-button>
+      </ion-button> -->
       <!--?               F I N I S H       F I L T E R                      -->
     </form>
     }
@@ -109,7 +120,7 @@
     }
     <ion-infinite-scroll (ionInfinite)="LoadMore($event)">
       <ion-infinite-scroll-content
-        loadingText="Loading more"
+        loadingText='{{"Shared.LoadingMore" | translate}}'
         loadingSpinner="dots"
       ></ion-infinite-scroll-content>
     </ion-infinite-scroll>

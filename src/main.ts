@@ -6,9 +6,11 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalo
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { MainInterceptor } from './app/secure/interceptors/MainInterceptor.interceptor';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { translateLoaderFactory } from './app/core/util/utils';
 
 if (environment.production) {
   enableProdMode();
@@ -16,12 +18,20 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideRouter(routes),
-    provideHttpClient(withInterceptors([MainInterceptor])),
+    provideHttpClient(withInterceptors([MainInterceptor]),withFetch()),
     importProvidersFrom([
-      IonicStorageModule.forRoot()
+      IonicStorageModule.forRoot(),
+      TranslateModule.forRoot({
+        defaultLanguage: 'es',
+        loader: {
+          provide: TranslateLoader,
+          useFactory: translateLoaderFactory,
+          deps: [HttpClient]
+        }
+      })
     ])
 
   ],

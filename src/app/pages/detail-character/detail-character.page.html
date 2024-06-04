@@ -1,12 +1,12 @@
-
 <ion-button fill="clear" slot="start" [routerLink]="['/characters']">
   <ion-icon name="chevron-back-outline"></ion-icon>
-  Back
+  {{"Shared.Back"|translate}}
 </ion-button>
 @if(error){
 <ion-label color="danger"> ERROR : {{error}}</ion-label>
 } @else{
 
+<!-- ! SI LA VARIBALE DICE QUE SE ESTA CARGANDO MOSTRAR SKELETONQ -->
 <ion-content>
   <ion-card class="ion-align-self-center">
     <img
@@ -15,37 +15,44 @@
       [src]="character.image"
     />
     <ion-card-header>
-      <ion-card-title>Name: {{character.name}}</ion-card-title>
+      <ion-card-title>
+        {{"CharactersPage.AboutCharacters.Name" | translate}}
+        {{character.name}}</ion-card-title
+      >
     </ion-card-header>
     <ion-card-content>
       <ion-label>
-        Status:
+        {{"CharactersPage.AboutCharacters.Status" | translate}}
         <ion-label [color]="colorStatus">{{character.status}}</ion-label>
       </ion-label>
 
       <br />
-      <ion-label> Specie: {{character.status}} </ion-label>
-
-      <br />
       <ion-label>
-        Type: {{character.type === '' ? 'Empty' : character.type}}
+        {{"CharactersPage.AboutCharacters.Specie" | translate}}
+        {{character.status}}
       </ion-label>
 
       <br />
       <ion-label>
-        Gender:
+        {{"CharactersPage.AboutCharacters.Type" | translate}} {{character.type
+        === '' ? 'Empty' : character.type}}
+      </ion-label>
+
+      <br />
+      <ion-label>
+        {{"CharactersPage.AboutCharacters.Gender" | translate}}
         <ion-label [color]="colorGender"> {{character.gender}}</ion-label>
       </ion-label>
 
       <br />
       <ion-label>
-        Planet Origin:
+        {{"CharactersPage.AboutCharacters.PlanetOrigin" | translate}}
         <ion-label color="success"> {{character.origin.name}}</ion-label>
       </ion-label>
 
       <br />
       <ion-label>
-        Ultimate Location
+        {{"CharactersPage.AboutCharacters.UltimateLocation" | translate}}
         <ion-label color="success"> {{character.location.name}}</ion-label>
       </ion-label>
     </ion-card-content>

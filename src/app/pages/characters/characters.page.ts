@@ -11,6 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Network } from '@capacitor/network';
 import { InfiniteScrollCustomEvent } from '@ionic/angular';
 import { StaticDataService } from '@services/static-data.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
@@ -18,7 +19,10 @@ import { StaticDataService } from '@services/static-data.service';
   templateUrl: './characters.page.html',
   styleUrls: ['./characters.page.scss'],
   standalone: true,
-  imports: [IonText, IonLabel, IonButton, IonCol, IonRow, IonGrid, IonSearchbar,
+  imports: [
+    TranslateModule
+    ,
+    IonText, IonLabel, IonButton, IonCol, IonRow, IonGrid, IonSearchbar,
     IonSkeletonText, IonNote,
     IonInfiniteScrollContent,
     IonInfiniteScroll, IonButtons, IonMenuButton,
