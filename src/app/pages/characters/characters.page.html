@@ -1,28 +1,23 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar class="ion-padding">
-    <ion-title>Characters</ion-title>
-    <ion-note>{{AllCharacter.length}}</ion-note>
-  </ion-toolbar>
-  <ion-toolbar>
-    @if(!isConnected){
-    <ion-title color="danger"> SIN CONEXION </ion-title>
-    } {{filterSearch | json}}
-  </ion-toolbar>
-</ion-header> -->
-<ion-menu-button slot="end"></ion-menu-button>
+<ion-toolbar>
+  <ion-menu-button slot="start"></ion-menu-button>
+  <ion-title class="ion-text-center"
+    >{{"MENUMAIN.CHARACTERS" | translate}}</ion-title
+  >
+</ion-toolbar>
 <ion-content class="ion-padding">
   @if(!isConnected){
   <ion-title color="danger">
     {{"Shared.WithoutConnection" | translate}}
   </ion-title>
-  } {{filterSearch | json}}
+  }
+  <!--  {{filterSearch | json}} -->
   <ion-toolbar>
     <!--?                     NOMBRE                      -->
     <ion-searchbar
       (ngModelChange)="Search()"
       [(ngModel)]="filterSearch.name"
       [ngModelOptions]="{standalone:true}"
-      placeholder="Search By Name"
+      placeholder='{{"CharactersPage.SearchByName" | translate}}'
     >
     </ion-searchbar>
 
@@ -32,7 +27,9 @@
       [color]="isFilter ? 'warning':'success'"
     >
       <!-- !          alta posibilidad de no funcionar -->
-      {{isFilter ? 'Hide Filters' : 'Show Filters'}}
+
+      @if(isFilter){ {{"CharactersPage.HideFilters" | translate}} } @else {
+      {{"CharactersPage.ShowFilters" | translate}} }
     </ion-button>
     @if(isFilter){
     <form class="ion-margin">
@@ -101,10 +98,6 @@
         }
       </ion-select>
 
-      <!--?                     BUTTON                      -->
-      <!-- <ion-button type="submit" fill="clear" color="success" (click)="Search()">
-        Filter
-      </ion-button> -->
       <!--?               F I N I S H       F I L T E R                      -->
     </form>
     }

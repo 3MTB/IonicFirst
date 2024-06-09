@@ -1,9 +1,20 @@
-<ion-card button="true"  [routerLink]="[character.id]" >
+<div>
   <img [alt]="character.name" [src]="character.image" />
-  <ion-card-header>
-    <ion-card-title> {{character.name}}</ion-card-title>
-    <ion-card-subtitle> Status: {{character.status}}</ion-card-subtitle>
-  </ion-card-header>
-  <ion-card-content> GENDER: {{character.gender}} </ion-card-content>
-</ion-card>
-
+  <ion-button fill="clear" color="danger" (click)="changeFavorite()">
+    @if(isFavorite){
+    <ion-icon color="success" name="heart"></ion-icon>
+    }@else{
+    <ion-icon name="heart-outline"></ion-icon>
+    }
+  </ion-button>
+  <ion-card [routerLink]="[character.id]">
+    <ion-card-header >
+      <ion-card-title> {{character.name}}</ion-card-title>
+      <ion-card-subtitle>
+        {{"CharactersPage.AboutCharacters.Status" | translate}}:
+        {{character.status}}</ion-card-subtitle
+      >
+    </ion-card-header>
+    <ion-card-content> {{"CharactersPage.AboutCharacters.Gender" | translate}}: {{character.gender}} </ion-card-content>
+  </ion-card>
+</div>

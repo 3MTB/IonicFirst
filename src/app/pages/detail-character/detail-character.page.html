@@ -17,42 +17,42 @@
     <ion-card-header>
       <ion-card-title>
         {{"CharactersPage.AboutCharacters.Name" | translate}}
-        {{character.name}}</ion-card-title
+        : {{character.name}}</ion-card-title
       >
     </ion-card-header>
     <ion-card-content>
       <ion-label>
         {{"CharactersPage.AboutCharacters.Status" | translate}}
-        <ion-label [color]="colorStatus">{{character.status}}</ion-label>
+        : <ion-label [color]="colorStatus">{{character.status}}</ion-label>
       </ion-label>
 
       <br />
       <ion-label>
         {{"CharactersPage.AboutCharacters.Specie" | translate}}
-        {{character.status}}
+        : {{character.status}}
       </ion-label>
 
       <br />
       <ion-label>
-        {{"CharactersPage.AboutCharacters.Type" | translate}} {{character.type
+        {{"CharactersPage.AboutCharacters.Type" | translate}}: {{character.type
         === '' ? 'Empty' : character.type}}
       </ion-label>
 
       <br />
       <ion-label>
-        {{"CharactersPage.AboutCharacters.Gender" | translate}}
+        {{"CharactersPage.AboutCharacters.Gender" | translate}}:
         <ion-label [color]="colorGender"> {{character.gender}}</ion-label>
       </ion-label>
 
       <br />
       <ion-label>
-        {{"CharactersPage.AboutCharacters.PlanetOrigin" | translate}}
+        {{"CharactersPage.AboutCharacters.PlanetOrigin" | translate}}:
         <ion-label color="success"> {{character.origin.name}}</ion-label>
       </ion-label>
 
       <br />
       <ion-label>
-        {{"CharactersPage.AboutCharacters.UltimateLocation" | translate}}
+        {{"CharactersPage.AboutCharacters.UltimateLocation" | translate}}: 
         <ion-label color="success"> {{character.location.name}}</ion-label>
       </ion-label>
     </ion-card-content>

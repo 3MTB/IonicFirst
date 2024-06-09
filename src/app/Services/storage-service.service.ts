@@ -33,8 +33,35 @@ export class StorageServiceService {
   async set(key: string, value: any) {
     await this._store.set(key, value);
   }
-  async get(key: string) {
+  async getByKey(key: string) {
     return await this._store.get(key);
   }
+
+  async setFavoriteCharacter(idCharacter: number) {
+    this._store.get('favoriteCharacters').then(x => {
+      if (x === null) {
+        console.log('WithOut Favorites', x);
+        this._store.set('favoriteCharacters', [idCharacter]);
+      }
+      else {
+        console.log('With Favorites', x);
+        x.push(idCharacter);
+        this._store.set('favoriteCharacters', x);
+      }
+    });
+    this._store.get('favoriteCharacters').then(x => console.log(x))
+  }
+
+  async getFavoriteCharacters() {
+    return await this._store.get('favoriteCharacters');
+  }
+  async removeFavoriteCharacter(idCharacter: number) {
+    this._store.get('favoriteCharacters').then(x => {
+      x?.splice(x.indexOf(idCharacter), 1);
+      this._store.set('favoriteCharacters', x);
+    });
+  }
+
+
 
 }

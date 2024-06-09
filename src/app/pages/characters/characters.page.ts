@@ -20,8 +20,7 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./characters.page.scss'],
   standalone: true,
   imports: [
-    TranslateModule
-    ,
+    TranslateModule,
     IonText, IonLabel, IonButton, IonCol, IonRow, IonGrid, IonSearchbar,
     IonSkeletonText, IonNote,
     IonInfiniteScrollContent,

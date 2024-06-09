@@ -22,7 +22,7 @@
     "AboutCharacters": {
       "Name": "Nombre",
       "Status": "Estatus",
-      "Gender": "Generp",
+      "Gender": "Genero",
       "Specie": "Especie",
       "Type": "Tipo",
       "PlanetOrigin": "Planeta de Origen",

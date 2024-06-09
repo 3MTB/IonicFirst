@@ -1,5 +1,6 @@
-import { HttpErrorResponse, HttpHandlerFn, HttpInterceptorFn, HttpRequest } from '@angular/common/http';
-import { catchError, throwError, map, EMPTY, Observable, observable } from 'rxjs';
+import { HttpErrorResponse,
+  HttpInterceptorFn } from '@angular/common/http';
+import { catchError, throwError } from 'rxjs';
 import { environment as env, } from '@env/environment.prod';
 import { inject } from '@angular/core';
 import { StorageServiceService } from '@services/storage-service.service';
