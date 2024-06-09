@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonLabel, IonButton, IonIcon } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonLabel, IonButton, IonIcon, IonMenuButton } from '@ionic/angular/standalone';
 import { Character } from '@interfaces/Character';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CharacterService } from '@services/character.service';
@@ -14,7 +14,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './detail-character.page.html',
   styleUrls: ['./detail-character.page.scss'],
   standalone: true,
-  imports: [IonIcon,TranslateModule, IonButton, RouterLink, IonLabel, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonCard, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonIcon,IonMenuButton, TranslateModule, IonButton, RouterLink, IonLabel, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonCard, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class DetailCharacterPage implements OnInit {
 

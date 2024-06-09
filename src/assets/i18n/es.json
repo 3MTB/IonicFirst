@@ -13,7 +13,8 @@
     "WithoutConnection": "Sin Conexión",
     "Back": "Volver",
     "All": "Todos",
-    "LoadingMore": "Cargando Más"
+    "LoadingMore": "Cargando Más",
+    "Details":"Detalles"
   },
   "CharactersPage": {
     "SearchByName": "Buscar por nombre",
