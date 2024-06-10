@@ -6,6 +6,6 @@ echo Continuando esta madre...
 
 call ionic build
 
-call ionic cap build
+call ionic cap build android
 
 pause

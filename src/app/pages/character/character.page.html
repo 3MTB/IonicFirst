@@ -5,18 +5,22 @@
     [routerLink]="[character.id]"
   />
 
-  <ion-button
-    class="iconFavorite"
-    fill="clear"
-    color="danger"
+  <!-- <ion-button class="iconFavorite" fill="clear" color="danger"> old button </ion-button> -->
+  @if(isFavorite){
+  <ion-icon
     (click)="changeFavorite()"
-  >
-    @if(isFavorite){
-    <ion-icon size="large" color="success" name="heart"></ion-icon>
-    }@else{
-    <ion-icon size="large" name="heart-outline"></ion-icon>
-    }
-  </ion-button>
+    size="large"
+    color="success"
+    name="heart"
+  ></ion-icon>
+  }@else{
+  <ion-icon
+    (click)="changeFavorite()"
+    size="large"
+    name="heart-outline"
+  ></ion-icon>
+  }
+
   <ion-card [routerLink]="[character.id]">
     <ion-card-header>
       <ion-card-title> {{character.name}}</ion-card-title>
